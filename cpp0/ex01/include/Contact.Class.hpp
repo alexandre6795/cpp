@@ -6,18 +6,25 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:04:35 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/14 11:17:15 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:43:00 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_H
-# define CONTACT_CLASS_H
+#pragma once
+
+#include <iostream>
+#include <string>
 
 class Contact
 {
   public:
 	Contact(void);
 	~Contact(void);
-};
 
-#endif
+  private:
+	std::string _fname;
+	std::string _lname;
+	std::string _nname;
+	std::string _phone;
+	std::string _secret;
+};

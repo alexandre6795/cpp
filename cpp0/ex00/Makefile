@@ -6,12 +6,12 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 10:04:23 by aherrman          #+#    #+#              #
-#    Updated: 2023/11/14 09:40:16 by aherrman         ###   ########.fr        #
+#    Updated: 2023/11/14 13:47:05 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= megaphone
-CXX				= g++
+NAME 			= Megaphone
+CXX				= c++
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 SRCS			= megaphone.cpp
 OBJS			= $(SRCS:.cpp=.o)
