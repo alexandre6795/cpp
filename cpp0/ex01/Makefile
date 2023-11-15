@@ -13,7 +13,10 @@
 NAME 			= Phonebook
 CXX				= c++
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
-SRCS			= Phonebook.cpp
+SRCS			= src/Phonebook.cpp\
+					src/main.cpp\
+					src/Contact.cpp\
+
 OBJS			= $(SRCS:.cpp=.o)
 
 all				: $(NAME)

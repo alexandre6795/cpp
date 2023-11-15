@@ -13,12 +13,19 @@
 #pragma once
 
 #include <iostream>
+#include <string>
+#include <limits>
+#include "Contact.Class.hpp"
 
 class Phonebook
 {
   public:
 	Phonebook(void);
 	~Phonebook(void);
+  void add(void);
+  void search(void);
 
   private:
+  Contact _contact[8];
+  int _index;
 };

@@ -14,12 +14,23 @@
 
 #include <iostream>
 #include <string>
+#include<limits>
 
 class Contact
 {
   public:
 	Contact(void);
 	~Contact(void);
+	void setfname(std::string str);
+	void setlname(std::string str);
+	void setnname(std::string str);
+	void setphone(std::string str);
+	void setsecret(std::string str);
+	std::string getfname(void);
+	std::string getlname(void);
+	std::string getnname(void);
+	std::string getphone(void);
+	std::string getsecret(void);
 
   private:
 	std::string _fname;

@@ -15,18 +15,22 @@
 
 int	main(int ac, char **av)
 {
+	(void)av;
 	if (ac > 1)
-		return ;
+		return(0) ;
 	Phonebook book;
 	std::string line;
 
+std::cout << "Phonebook v0.0"<<std::endl;
 	while (1)
 	{
+		std::cout << "entrez une commande ; ";
 		std::getline(std::cin, line);
 		if (line == "ADD")
-			book.ADD;
+			book.add();
 		else if (line == "SEARCH")
-			book.SEARCH;
+			std::cout << "bou";
+		//	book.search();
 		else if (line == "EXIT")
 			break ;
 		else
