@@ -6,15 +6,17 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:04:35 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/15 11:43:00 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:10:25 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <cstdlib>
+#include <iomanip>
 #include <iostream>
+#include <limits>
 #include <string>
-#include<limits>
 
 class Contact
 {
