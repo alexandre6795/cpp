@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:49:34 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/17 12:37:25 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:43:53 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static const std::string getuser(const std::string msg)
 	else if (input.find('\t') != std::string ::npos)
 	{
 		std::cout << "tab dans la chaine" << std::endl;
+		input = "signaux non valide";
 	}
 	else if (input.empty())
 		std::cout << "empty is not okay okay ?" << std::endl;
