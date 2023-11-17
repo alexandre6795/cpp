@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:49:34 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/16 11:48:40 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:37:25 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,39 +79,62 @@ void Phonebook::add(void)
 			exit(0);
 	} while (str.empty());
 	this->_contact[_index].setsecret(str);
-	if (_index >= 2)
+	if (_index >= 7)
 		_index = 0;
 	else
 		_index++;
 }
 
-// static std::string shrink(std::string str)
-// {
-// 	if (str.length() <= 10)
-// 		return (str);
-// 	str.resize(10);
-// 	str[9] = '.';
-// 	return (str);
-// }
-
-void	base_tab(void)
+static std::string shrink(std::string str)
 {
-	char	s;
-	int		size;
+	if (str.length() <= 10)
+		return (str);
+	str.resize(10);
+	str[9] = '.';
+	return (str);
+}
 
-	s = '$';
-	size = 110;
-    size = (size / 11) * 11;
-	for (int i = 0; i < size; i++)
-		std::cout << s;
+void Phonebook::col(int rows)
+{
+	std::cout << "|  INDEX   |";
+	std::cout << "FIRST NAME|";
+	std::cout << "LAST NAME |";
+	std::cout << " NICK NAME|";
 	std::cout << std::endl;
-	for (int i = 0; i < size; ++i)
+	for (int i = 0; i < rows; i++)
+		std::cout << "-";
+	std::cout << std::endl;
+	for (int i = 0; i < 8; i++)
 	{
-		if (i == 0 || i == size - 1)
+		if (this->_contact[i].getfname().empty())
+			break ;
+		std::cout << "|";
+		std::cout << std::setw(10) << std::right << (i + 1) << "|";
+		std::cout << std::setw(10) << std::right << shrink(this->_contact[i].getfname()) << "|";
+		std::cout << std::setw(10) << std::right << shrink(this->_contact[i].getlname()) << "|";
+		std::cout << std::setw(10) << std::right << shrink(this->_contact[i].getnname()) << "|";
+		std::cout << std::endl;
+		for (int i = 0; i < rows; i++)
+			std::cout << "-";
+		std::cout << std::endl;
+	}
+}
+
+static void	base_tab(void)
+{
+	int	rows;
+
+	rows = 45;
+	for (int i = 0; i < rows; i++)
+		std::cout << "-";
+	std::cout << std::endl;
+	for (int i = 0; i < rows; ++i)
+	{
+		if (i == 0 || i == rows - 1)
 		{
-			std::cout << s;
+			std::cout << "|";
 		}
-		else if (size - i > 11)
+		else if (i == (rows - 11) / 2)
 		{
 			std::cout << " Phonebook ";
 			i += 10;
@@ -120,12 +143,58 @@ void	base_tab(void)
 			std::cout << " ";
 	}
 	std::cout << std::endl;
-	for (int i = 0; i < size; i++)
-		std::cout << s;
+	for (int i = 0; i < rows; i++)
+		std::cout << "-";
 	std::cout << std::endl;
+}
+
+void Phonebook::printcontact(int i)
+{
+	std::cout << "Contact number :" << i << std::endl;
+	std::cout << "First name :" << this->_contact[i].getfname() << std::endl;
+	std::cout << "Last name :" << this->_contact[i].getlname() << std::endl;
+	std::cout << "Nick name :" << this->_contact[i].getnname() << std::endl;
+	std::cout << "Phone number :" << this->_contact[i].getphone() << std::endl;
+	std::cout << "Darkest secret :" << this->_contact[i].getsecret() << std::endl;
 }
 
 void Phonebook::search(void)
 {
+	int	i;
+
+	i = -1;
+	std::string str;
 	base_tab();
+	col(45);
+	if ((this->_contact[0].getfname().empty()))
+		std::cout << "no contact in PHONEBOOK";
+	do
+	{
+		std::cout << "write index number: ";
+		if (!std::getline(std::cin, str))
+			exit(0);
+		else if (str.find('\t') != std::string ::npos)
+		{
+			std::cout << "tab dans la chaine" << std::endl;
+		}
+		else if (str.empty())
+			std::cout << "empty is not okay okay ?" << std::endl;
+		std::istringstream iss(str);
+		if (!(iss >> i))
+		{
+			std::cerr << "Erreur : la conversion en int a échoué." << std::endl;
+			i = -1;
+		}
+		else if(i <= 0 || i > 8)
+		{
+			std::cout << "max contact are 8 select number 1 to 8 and you ask: " << i << std::endl;
+			i = -1;
+		}
+		else if (this->_contact[i-1].getfname().empty())
+		{
+			std::cout << "you have select empty contact" << std::endl;
+			i = -1;
+		}
+	} while (i == -1);
+	printcontact(i-1);
 }
