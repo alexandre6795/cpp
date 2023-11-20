@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 09:48:21 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/20 13:55:15 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:04:09 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ZOMBIE_CLASS_HPP
 
 # include <cstdlib>
+# include <ctime>
 # include <iomanip>
 # include <iostream>
 # include <limits>
@@ -23,11 +24,12 @@
 class Zombie
 {
   public:
+	Zombie();
 	Zombie(std::string nomZombie);
 	~Zombie(void);
 	void message();
-	Zombie *newZombie(std::string name);
-	void randomChump(std::string name);
+	Zombie* zombieHorde(int N, std::string name);
+
   private:
 	std::string _name;
 };

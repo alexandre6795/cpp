@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.Class.hpp                                   :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 09:48:21 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/20 13:55:15 by aherrman         ###   ########.fr       */
+/*   Created: 2023/11/20 15:30:18 by aherrman          #+#    #+#             */
+/*   Updated: 2023/11/20 16:08:40 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_CLASS_HPP
-# define ZOMBIE_CLASS_HPP
+#include "../include/Zombie.Class.hpp"
 
-# include <cstdlib>
-# include <iomanip>
-# include <iostream>
-# include <limits>
-# include <sstream>
-# include <string>
-
-class Zombie
+Zombie *Zombie::zombieHorde(int N, std::string name)
 {
-  public:
-	Zombie(std::string nomZombie);
-	~Zombie(void);
-	void message();
-	Zombie *newZombie(std::string name);
-	void randomChump(std::string name);
-  private:
-	std::string _name;
-};
-
-#endif
+	Zombie *zombie = new Zombie[N];
+	for (int i = 0; i < N; i++)
+	{
+		std::stringstream ss;
+		ss << name << i;
+		std::string tmp = ss.str();
+		zombie[i] = Zombie(tmp);
+	}
+	return (zombie);
+}

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.Class.hpp                                   :+:      :+:    :+:   */
+/*   Zombie.Class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 09:48:21 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/20 13:55:15 by aherrman         ###   ########.fr       */
+/*   Created: 2023/11/20 10:15:46 by aherrman          #+#    #+#             */
+/*   Updated: 2023/11/20 15:50:16 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_CLASS_HPP
-# define ZOMBIE_CLASS_HPP
+#include "../include/Zombie.Class.hpp"
 
-# include <cstdlib>
-# include <iomanip>
-# include <iostream>
-# include <limits>
-# include <sstream>
-# include <string>
-
-class Zombie
+Zombie::Zombie() : _name("Default Zombie")
 {
-  public:
-	Zombie(std::string nomZombie);
-	~Zombie(void);
-	void message();
-	Zombie *newZombie(std::string name);
-	void randomChump(std::string name);
-  private:
-	std::string _name;
-};
+}
 
-#endif
+Zombie::Zombie(std::string nomZombie) : _name(nomZombie)
+{
+	return ;
+}
+
+Zombie::~Zombie(void)
+{
+	std::cout << _name << " detruit" << std::endl;
+	return ;
+}
+
+void Zombie::message()
+{
+	std::cout << _name << " : BraiiiiiiinnnzzzZ..." << std::endl;
+	return ;
+}

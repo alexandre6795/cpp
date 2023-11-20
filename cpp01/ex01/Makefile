@@ -6,7 +6,7 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 10:04:23 by aherrman          #+#    #+#              #
-#    Updated: 2023/11/20 14:03:16 by aherrman         ###   ########.fr        #
+#    Updated: 2023/11/20 16:07:19 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME 			= Zombie
 CXX				= c++
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 SRCS			= src/Zombie.Class.cpp\
-				src/randomChump.cpp\
-				src/newZombie.cpp\
-				src/main.cpp
+				src/main.cpp\
+				src/zombieHorde.cpp
+
 OBJS			= $(SRCS:.cpp=.o)
 
 all				: $(NAME)
