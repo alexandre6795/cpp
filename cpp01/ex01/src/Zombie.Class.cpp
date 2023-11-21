@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:15:46 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/20 15:50:16 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/21 11:30:29 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 Zombie::Zombie() : _name("Default Zombie")
 {
-}
-
-Zombie::Zombie(std::string nomZombie) : _name(nomZombie)
-{
-	return ;
 }
 
 Zombie::~Zombie(void)
