@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:50:12 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/22 15:42:07 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:40:10 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,22 @@ Harl::~Harl()
 
 void Harl::debug(void)
 {
-	std::cout << "debug" << std::endl;
+	std::cout << "DEBUG:" << std::endl;
 	return ;
 }
 void Harl::info(void)
 {
-	std::cout << "info" << std::endl;
+	std::cout << "INFO:" << std::endl;
 	return ;
 }
 void Harl::warning(void)
 {
-	std::cout << "warning" << std::endl;
+	std::cout << "WARNING:" << std::endl;
 	return ;
 }
 void Harl::error(void)
 {
-	std::cout << "error" << std::endl;
+	std::cout << "ERROR:" << std::endl;
 	return ;
 }
 void Harl::complain(std::string level)
