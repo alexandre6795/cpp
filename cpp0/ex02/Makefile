@@ -6,17 +6,15 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 10:04:23 by aherrman          #+#    #+#              #
-#    Updated: 2023/11/21 15:56:42 by aherrman         ###   ########.fr        #
+#    Updated: 2023/11/22 11:24:25 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			= Best_Job
 CXX				= c++
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
-SRCS			= src/Phonebook.cpp\
-					src/main.cpp\
-					src/Contact.cpp\
-
+SRCS			= Account.cpp\
+					tests.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 all				: $(NAME)
