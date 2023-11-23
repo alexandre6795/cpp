@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:49:08 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/16 08:18:33 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:22:44 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Contact constructeur" << std::endl;
+	//std::cout << "Contact constructeur" << std::endl;
 	return ;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Contact destructeur" << std::endl;
+	//std::cout << "Contact destructeur" << std::endl;
 	return ;
 }
 

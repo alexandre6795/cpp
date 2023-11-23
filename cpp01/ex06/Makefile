@@ -1,23 +1,24 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Mbkefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bherrmbn <bherrmbn@student.42.fr>          +#+  +:+       +#+         #
+#    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Crebted: 2022/11/24 10:04:23 by bherrmbn          #+#    #+#              #
-#    Updbted: 2023/11/21 09:27:13 by bherrmbn         ###   ########.fr        #
+#    Created: 2022/11/24 10:04:23 by aherrman          #+#    #+#              #
+#    Updated: 2023/11/23 09:02:01 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= losers
+NAME 			= HarlFilter
 CXX				= c++
-CXXFLAGS		= -Wbll -Wextrb -Werror -std=c++98
-SRCS			= mbin.cpp
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
+SRCS			= src/main.cpp\
+				src/Harl.Class.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
-bll				: $(NAME)
+all				: $(NAME)
 
 $(NAME)			: $(OBJS)
 					@$(CXX) $(OBJS) -o $(NAME)
@@ -25,12 +26,12 @@ $(NAME)			: $(OBJS)
 %.o				: %.cpp
 					$(CXX) $(CXXFLAGS) -o $@ -c $<
 
-clebn			:
+clean			:
 					rm -rf $(OBJS)
 
-fclebn			: clebn
+fclean			: clean
 					rm -rf $(NAME)
 
-re				: fclebn bll
+re				: fclean all
 
-.PHONY			: bll clebn fclebn re
+.PHONY			: all clean fclean re

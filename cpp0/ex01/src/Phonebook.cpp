@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:49:34 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/17 12:43:53 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:24:35 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Phonebook::Phonebook(void) : _index(0)
 {
-	std::cout << "phonebook constructeur" << std::endl;
+	// std::cout << "phonebook constructeur" << std::endl;
 }
 Phonebook::~Phonebook(void)
 {
-	std::cout << "phonebook destructeur" << std::endl;
+	// std::cout << "phonebook destructeur" << std::endl;
 }
 
 static const std::string getuser(const std::string msg)
@@ -168,7 +168,10 @@ void Phonebook::search(void)
 	base_tab();
 	col(45);
 	if ((this->_contact[0].getfname().empty()))
-		std::cout << "no contact in PHONEBOOK";
+	{
+		std::cout << "no contact in PHONEBOOK"<<std::endl;
+		return ;
+	}
 	do
 	{
 		std::cout << "write index number: ";
@@ -186,16 +189,16 @@ void Phonebook::search(void)
 			std::cerr << "Erreur : la conversion en int a échoué." << std::endl;
 			i = -1;
 		}
-		else if(i <= 0 || i > 8)
+		else if (i <= 0 || i > 8)
 		{
 			std::cout << "max contact are 8 select number 1 to 8 and you ask: " << i << std::endl;
 			i = -1;
 		}
-		else if (this->_contact[i-1].getfname().empty())
+		else if (this->_contact[i - 1].getfname().empty())
 		{
 			std::cout << "you have select empty contact" << std::endl;
 			i = -1;
 		}
 	} while (i == -1);
-	printcontact(i-1);
+	printcontact(i - 1);
 }

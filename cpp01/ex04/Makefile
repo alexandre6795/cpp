@@ -6,11 +6,11 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 10:04:23 by aherrman          #+#    #+#              #
-#    Updated: 2023/11/21 09:27:13 by aherrman         ###   ########.fr        #
+#    Updated: 2023/11/23 09:42:20 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= losers
+NAME 			= Losers
 CXX				= c++
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 SRCS			= main.cpp

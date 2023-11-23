@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:31:16 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/16 11:37:38 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:26:58 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ int	main(int ac, char **av)
 			std::cout << std::endl;
 			break ;
 		}
-		if ((line == "ADD") || (line == "a"))
+		if ((line == "ADD"))
 			book.add();
-		else if ((line == "SEARCH") || (line == "s"))
+		else if ((line == "SEARCH"))
 
 			book.search();
-		else if ((line == "EXIT") || (line == "e"))
+		else if ((line == "EXIT"))
 			break ;
 		else
 		{
-			std::cout << "cette commande est un erreur (comme toi)" << std::endl;
+			std::cout << "cette commande est un erreur" << std::endl;
 			std::cout << " commande valide \"ADD\" \"SEARCH\" ou \"EXIT\" " << std::endl;
 		}
 	}

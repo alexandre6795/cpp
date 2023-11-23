@@ -6,11 +6,11 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 10:04:23 by aherrman          #+#    #+#              #
-#    Updated: 2023/11/20 16:07:19 by aherrman         ###   ########.fr        #
+#    Updated: 2023/11/23 09:34:11 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= Zombie
+NAME 			= zombieHorde
 CXX				= c++
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 SRCS			= src/Zombie.Class.cpp\
