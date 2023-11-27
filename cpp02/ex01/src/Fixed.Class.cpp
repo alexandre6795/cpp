@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:03:53 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/23 15:46:10 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:46:07 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,12 @@ Fixed::Fixed(const int v) : _val(v << _fractionnaire)
 }
 Fixed::Fixed(const float f) : _val(roundf(f *(1<<_fractionnaire)))
 {
-	std::cout << f << " after frac " << _val << std::endl;
 	std::cout << "Float constructor called" << std::endl;
 	return ;
 }
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (_val);
 }
 Fixed & ::Fixed::operator=(const Fixed &copy)
