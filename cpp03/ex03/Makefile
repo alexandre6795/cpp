@@ -6,15 +6,18 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 10:04:23 by aherrman          #+#    #+#              #
-#    Updated: 2023/11/28 14:15:32 by aherrman         ###   ########.fr        #
+#    Updated: 2023/11/28 16:17:14 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= Clap
+NAME 			= Frag
 CXX				= c++
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 SRCS			= src/main.cpp\
-				src/ClapTrap.Class.cpp
+				src/ClapTrap.Class.cpp\
+				src/ScavTrap.Class.cpp\
+				src/DiamondTrap.Class.cpp\
+				src/FragTrap.Class.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 all				: $(NAME)
