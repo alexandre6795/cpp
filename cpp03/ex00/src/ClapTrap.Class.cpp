@@ -51,7 +51,7 @@ ClapTrap & ::ClapTrap::operator=(const ClapTrap &copy)
 
 void ClapTrap::Status()
 {
-	std::cout << "Hello my name is" << _Name << " i have " << _Hit << "HP my Energy is over " << _Energy << "and i can deal " << _Attack << " damage per attack" << std::endl;
+	std::cout << "Hello my name is " << _Name << " i have " << _Hit << " HP my Energy is over " << _Energy << " and i can deal " << _Attack << " damage per attack" << std::endl;
 	return ;
 }
 
@@ -60,19 +60,20 @@ void ClapTrap::attack(const std::string &name)
 	int	tmp;
 
 	tmp = this->_Energy;
-	if (tmp == 0 || this->_Hit == 0)
+	if (tmp > 0 && this->_Hit > 0)
 	{
-		this->_Energy -= 1;
+		this->_Energy--;
 		std::cout << "ClapTrap " << _Name << " attacks " << name << " causing " << _Attack << " points of damage!" << std::endl;
-		std::cout << "nice attack but i'm more tired now my energy " << tmp << " drop to" << _Energy << std::endl;
+		std::cout << "now i'm more tired my energy " << tmp << " drop to " << _Energy << std::endl;
 	}
 	else
 	{
 		std::cout << _Name << " i can't fight more ";
-		if (tmp == 0)
-			std::cout << " i don't have enough energy for nothing";
-		else
+		if (this->_Hit == 0)
 			std::cout << " my life is gone ";
+		else
+			std::cout << " i don't have enough energy for nothing";
+		std::cout << std::endl;
 	}
 }
 
@@ -87,12 +88,25 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "ClapTrap " << _Name << " repair " << amount << std::endl;
-	if (amount + this->_Hit >= 10)
-		this->_Hit = 10;
+	if (this->_Energy > 0 && this->_Hit > 0)
+	{
+		this->_Energy--;
+		std::cout << "ClapTrap " << _Name << " repair " << amount << std::endl;
+		if (amount + this->_Hit >= 10)
+			this->_Hit = 10;
+		else
+			this->_Hit += amount;
+		this->Status();
+	}
 	else
-		this->_Hit += amount;
-	this->Status();
+	{
+		std::cout << "ClapTrap " << _Name << " can't repair ";
+		if (this->_Hit == 0)
+			std::cout << " my life is gone ";
+		else
+			std::cout << " i don't have enough energy for nothing";
+		std::cout << std::endl;
+	}
 }
 
 // SET ET GET //
