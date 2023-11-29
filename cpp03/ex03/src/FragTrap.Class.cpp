@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:21:32 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/28 15:14:50 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 09:20:04 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ FragTrap & ::FragTrap::operator=(const FragTrap &copy)
 	}
 	return (*this);
 }
-void FragTrap::guardGate(void)
+void FragTrap::hightFivesGuys(void)
 {
-	std::cout << _Name << " Hold the door(guard mode)" << std::endl;
+    std::cout << "COME ON GUUUUYS, GIVE ME A HIGHFIVES !" << std::endl;
 }
+
 void FragTrap::beRepaired(unsigned int amount)
 {
 	if (this->_Energy > 0 && this->_Hit > 0)

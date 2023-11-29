@@ -6,12 +6,12 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 16:16:36 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/28 16:24:22 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 10:18:05 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.Class.hpp";
-#include "ScavTrap.Class.hpp";
+#include "FragTrap.Class.hpp"
+#include "ScavTrap.Class.hpp"
 
 #pragma once
 
@@ -23,8 +23,8 @@ class DiamondTrap : public FragTrap, public ScavTrap
 	DiamondTrap(const DiamondTrap &copy);
 	~DiamondTrap();
 	DiamondTrap &operator=(const DiamondTrap &copy);
-	void whooAmI();
+	void whoAmI();
 
   private:
-	std::string _name;
+	std::string _Name;
 };

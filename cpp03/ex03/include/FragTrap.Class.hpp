@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:19:28 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/28 15:13:40 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 09:18:31 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class FragTrap : public ClapTrap
 	~FragTrap();
 	FragTrap &operator=(const FragTrap &copy);
 
-	void guardGate();
+	void hightFivesGuys(void);
 	void beRepaired(unsigned int amount);
 	void attack(const std::string &target);
 };
