@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:19:28 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/28 14:54:52 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 10:53:23 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #pragma once
 
-class ScavTrap : public ClapTrap
+class ScavTrap :virtual public ClapTrap
 {
   public:
 	ScavTrap();

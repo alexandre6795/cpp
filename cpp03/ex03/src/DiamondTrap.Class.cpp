@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.Class.cpp                                 :+:      :+:    :+:   */
+/*   DiamondTrap.Class.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 13:21:32 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/29 11:19:45 by aherrman         ###   ########.fr       */
+/*   Created: 2023/11/28 16:16:55 by aherrman          #+#    #+#             */
+/*   Updated: 2023/11/29 11:34:57 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/FragTrap.Class.hpp"
+#include "../include/DiamondTrap.Class.hpp"
 
-FragTrap::FragTrap() : ClapTrap()
+DiamondTrap::DiamondTrap()
 {
-	this->_Hit = 100;
-	this->_Energy = 100;
-	this->_Attack = 30;
-	std::cout << "FragTrap default constructor called" << std::endl;
+	this->_Name = "noname";
+	ClapTrap::_Name = _Name + "_clap_name";
+	this->_Hit = FragTrap::getHit();
+	this->_Energy = ScavTrap::_Energy;
+	this->_Attack = FragTrap::_Attack;
+	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name),FragTrap(name), ScavTrap(name) 
 {
 	this->_Name = name;
-	this->_Hit = 100;
-	this->_Energy = 100;
-	this->_Attack = 30;
-	std::cout << "FragTrap  name constructor called" << std::endl;
+	ClapTrap::_Name = _Name + "_clap_name";
+	this->_Hit = FragTrap::getHit();
+	this->_Energy = ScavTrap::_Energy;
+	this->_Attack = FragTrap::_Attack;
+	std::cout << "DiamondTrap name constructor called" << std::endl;
 }
-
-FragTrap::~FragTrap()
+DiamondTrap::~DiamondTrap()
 {
-	std::cout << "FragTrap default destructor called" << std::endl;
-	return ;
 }
-FragTrap::FragTrap(const FragTrap &copy)
+DiamondTrap::DiamondTrap(const DiamondTrap &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->operator=(copy);
 }
-FragTrap & ::FragTrap::operator=(const FragTrap &copy)
+DiamondTrap & ::DiamondTrap::operator=(const DiamondTrap &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &copy)
@@ -50,17 +51,16 @@ FragTrap & ::FragTrap::operator=(const FragTrap &copy)
 	}
 	return (*this);
 }
-void FragTrap::hightFivesGuys(void)
+void DiamondTrap::whoAmI()
 {
-    std::cout << "COME ON GUUUUYS, GIVE ME A HIGHFIVES !" << std::endl;
+	std::cout << "my  Diamond name is " << this->_Name << " my ClapTrap name is " << ClapTrap::getName() << ClapTrap::_Name <<  std::endl;
 }
-
-void FragTrap::beRepaired(unsigned int amount)
+void DiamondTrap::beRepaired(unsigned int amount)
 {
 	if (this->_Energy > 0 && this->_Hit > 0)
 	{
 		this->_Energy--;
-		std::cout << "FragTrap " << _Name << " repair " << amount << std::endl;
+		std::cout << "DiamondTrap " << _Name << " repair " << amount << std::endl;
 		if (amount + this->_Hit >= 100)
 			this->_Hit = 100;
 		else
@@ -69,7 +69,7 @@ void FragTrap::beRepaired(unsigned int amount)
 	}
 	else
 	{
-		std::cout << "FragTrap " << _Name << " can't repair ";
+		std::cout << "DiamondTrap " << _Name << " can't repair ";
 		if (this->_Hit == 0)
 			std::cout << " my life is gone ";
 		else
@@ -77,15 +77,15 @@ void FragTrap::beRepaired(unsigned int amount)
 		std::cout << std::endl;
 	}
 }
-void FragTrap::attack(const std::string &name)
+void DiamondTrap::attack(const std::string &name)
 {
-	int	tmp;
+	int tmp;
 
 	tmp = this->_Energy;
 	if (tmp > 0 && this->_Hit > 0)
 	{
 		this->_Energy--;
-		std::cout << "FragTrap " << _Name << " attacks " << name << " causing " << _Attack << " points of damage!" << std::endl;
+		std::cout << "DiamondTrap " << _Name << " attacks " << name << " causing " << _Attack << " points of damage!" << std::endl;
 		std::cout << "now i'm more tired my energy " << tmp << " drop to " << _Energy << std::endl;
 	}
 	else

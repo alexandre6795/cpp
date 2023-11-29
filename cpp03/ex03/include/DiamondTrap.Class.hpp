@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 16:16:36 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/29 10:18:05 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:08:22 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class DiamondTrap : public FragTrap, public ScavTrap
 	~DiamondTrap();
 	DiamondTrap &operator=(const DiamondTrap &copy);
 	void whoAmI();
+	void beRepaired(unsigned int amount);
+	void attack(const std::string &target);
 
   private:
 	std::string _Name;

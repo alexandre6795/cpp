@@ -22,7 +22,7 @@ ClapTrap::ClapTrap() : _Hit(10), _Energy(10), _Attack(0)
 ClapTrap::ClapTrap(std::string name) : _Name(name), _Hit(10), _Energy(10),
 	_Attack(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << " name constructor called" << std::endl;
 	//std::cout << "Hello my name is " << _Name << " i have " << _Hit << "HP my Energy is over " << _Energy << " and i can deal " << _Attack << " damage per attack" << std::endl;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:31:48 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/29 09:55:05 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:36:35 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,11 @@ int	main(void)
 
 	std::cout << std::endl << "DiamondTrap test" << std::endl;
 	DiamondTrap Diamond;
-	tmp = "un gentil papillon";
-	Diamond.setName("Quentin");
+	tmp = "un petit poid";
+	Diamond.hightFivesGuys();
+	Diamond.guardGate();
+	Diamond.whoAmI();
+	
 	Diamond.attack(tmp);
 	std::cout << tmp << " attack" << std::endl;
 	Diamond.takeDamage(8);
@@ -129,10 +132,12 @@ int	main(void)
 	Diamond.attack(tmp);
 	Diamond.beRepaired(1);
 	std::cout << std::endl << std::endl;
-	DiamondTrap Diamond2("Axel");
+	DiamondTrap Diamond2("Bonduelle");
 
-	Diamond2.attack(tmp);
 	Diamond2.hightFivesGuys();
+	Diamond2.guardGate();
+	Diamond2.whoAmI();
+	Diamond2.attack(tmp);
 	std::cout << tmp << " attack" << std::endl;
 	Diamond2.takeDamage(8);
 	Diamond2.beRepaired(2);
