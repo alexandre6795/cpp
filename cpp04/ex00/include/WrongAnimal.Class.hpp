@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.Class.hpp                                 :+:      :+:    :+:   */
+/*   WrongAnimal.Class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:05:13 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/30 13:43:15 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/28 09:59:20 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,32 +28,18 @@
 #define MAGENTA "\033[35m"
 #define GRAS "\033[1m"
 
-class ClapTrap
+class WrongAnimal
 {
   public:
-	ClapTrap();
-	ClapTrap(const std::string name);
-	ClapTrap(const ClapTrap &copy);
-	~ClapTrap();
-	ClapTrap &operator=(const ClapTrap &copy);
+	WrongAnimal();
+	WrongAnimal(const std::string name);
+	WrongAnimal(const WrongAnimal &copy);
+	virtual ~WrongAnimal();
+	WrongAnimal &operator=(const WrongAnimal &copy);
 
-	void attack(const std::string &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-    void Status();
-
-	void setName(std::string name);
-    std::string getName(void);
-    void setHit(unsigned int amount);
-    unsigned int getHit(void);
-        void setEnergy(unsigned int amount);
-    unsigned int getEnergy(void);
-        void setAttack(unsigned int amount);
-    unsigned int getAttack(void);
+	 void makeSound() const;
+	std::string getType() const;
 
   protected:
-	std::string _Name;
-  	unsigned int _Hit;
-	unsigned int _Energy;
-	unsigned int _Attack;
+	std::string _Type;
 };

@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.Class.hpp                                 :+:      :+:    :+:   */
+/*   Cat.Class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:05:13 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/30 13:43:15 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/28 09:59:20 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Animal.Class.hpp"
 
 #pragma once
 #include <cmath>
@@ -28,32 +30,14 @@
 #define MAGENTA "\033[35m"
 #define GRAS "\033[1m"
 
-class ClapTrap
+class Cat : virtual public Animal
 {
   public:
-	ClapTrap();
-	ClapTrap(const std::string name);
-	ClapTrap(const ClapTrap &copy);
-	~ClapTrap();
-	ClapTrap &operator=(const ClapTrap &copy);
+	Cat();
+	Cat(const std::string name);
+	Cat(const Cat &copy);
+	virtual ~Cat();
+	Cat &operator=(const Cat &copy);
+	void makeSound() const;
 
-	void attack(const std::string &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-    void Status();
-
-	void setName(std::string name);
-    std::string getName(void);
-    void setHit(unsigned int amount);
-    unsigned int getHit(void);
-        void setEnergy(unsigned int amount);
-    unsigned int getEnergy(void);
-        void setAttack(unsigned int amount);
-    unsigned int getAttack(void);
-
-  protected:
-	std::string _Name;
-  	unsigned int _Hit;
-	unsigned int _Energy;
-	unsigned int _Attack;
 };

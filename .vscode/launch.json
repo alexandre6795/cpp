@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/local-home/aherrman/Documents/cpp/cpp03/ex00/src",
-      "program": "/local-home/aherrman/Documents/cpp/cpp03/ex00/src/build/Debug/outDebug",
+      "cwd": "/local-home/aherrman/Documents/cpp/cpp03/ex03/src",
+      "program": "/local-home/aherrman/Documents/cpp/cpp03/ex03/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
