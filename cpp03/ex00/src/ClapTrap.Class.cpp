@@ -14,21 +14,21 @@
 
 ClapTrap::ClapTrap() : _Hit(10), _Energy(10), _Attack(0)
 {
-	std::cout << "Default constructor called" << std::endl;
-	std::cout << "Hello my name is unknow i have " << _Hit << "HP my Energy is over " << _Energy << "and i can deal " << _Attack << " damage per attack" << std::endl;
+	std::cout <<GREEN<< "Default constructor called" << std::endl;
+	std::cout << "Hello my name is unknow i have " << _Hit << " HP my Energy is over " << _Energy << " and i can deal " << _Attack << " damage per attack" <<  RESET<< std::endl;
 	return ;
 }
 
 ClapTrap::ClapTrap(std::string name) : _Name(name), _Hit(10), _Energy(10),
 	_Attack(0)
 {
-	std::cout << "Default constructor called" << std::endl;
-	std::cout << "Hello my name is " << _Name << " i have " << _Hit << "HP my Energy is over " << _Energy << "and i can deal " << _Attack << " damage per attack" << std::endl;
+	std::cout <<GREEN<< "name constructor called" << std::endl;
+	std::cout << "Hello my name is " << _Name << " i have " << _Hit << "HP my Energy is over " << _Energy << "and i can deal " << _Attack << " damage per attack"<< RESET << std::endl;
 	return ;
 }
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout <<RED<< "Destructor called" << std::endl;
 	return ;
 }
 ClapTrap::ClapTrap(const ClapTrap &copy)
@@ -63,7 +63,7 @@ void ClapTrap::attack(const std::string &name)
 	if (tmp > 0 && this->_Hit > 0)
 	{
 		this->_Energy--;
-		std::cout << "ClapTrap " << _Name << " attacks " << name << " causing " << _Attack << " points of damage!" << std::endl;
+		std::cout << _Name << " attacks " << name << " causing " << _Attack << " points of damage!" << std::endl;
 		std::cout << "now i'm more tired my energy " << tmp << " drop to " << _Energy << std::endl;
 	}
 	else
@@ -79,7 +79,7 @@ void ClapTrap::attack(const std::string &name)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << _Name << " take " << amount << " damage " << std::endl;
+	std::cout   << _Name << " take " << amount << " damage " << std::endl;
 	if (amount >= this->_Hit)
 		this->_Hit = 0;
 	else
@@ -91,7 +91,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	if (this->_Energy > 0 && this->_Hit > 0)
 	{
 		this->_Energy--;
-		std::cout << "ClapTrap " << _Name << " repair " << amount << std::endl;
+		std::cout  << _Name << " repair " << amount << std::endl;
 		if (amount + this->_Hit >= 10)
 			this->_Hit = 10;
 		else
@@ -100,11 +100,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	else
 	{
-		std::cout << "ClapTrap " << _Name << " can't repair ";
+		std::cout  << _Name << " can't repair ";
 		if (this->_Hit == 0)
 			std::cout << " my life is gone ";
 		else
-			std::cout << " i don't have enough energy for nothing";
+			std::cout << " don't have enough energy for nothing";
 		std::cout << std::endl;
 	}
 }

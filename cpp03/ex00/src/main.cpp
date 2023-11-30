@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:31:48 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/28 11:29:54 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:02:32 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
 	Bob.attack(tmp);
 	Bob.beRepaired(1);
 	std::cout << std::endl << std::endl;
-	ClapTrap Bob2("You");
+	ClapTrap Bob2("Zen");
 
 	Bob2.attack(tmp);
 	std::cout << tmp << " attack" << std::endl;

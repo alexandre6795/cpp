@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:21:32 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/28 15:14:50 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:06:51 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap() : ClapTrap()
 	this->_Hit = 100;
 	this->_Energy = 100;
 	this->_Attack = 30;
-	std::cout << "FragTrap default constructor called" << std::endl;
+	std::cout <<GREEN<< "FragTrap default constructor called" <<RESET<< std::endl;
 }
 FragTrap::FragTrap(std::string name) : ClapTrap()
 {
@@ -25,12 +25,12 @@ FragTrap::FragTrap(std::string name) : ClapTrap()
 	this->_Hit = 100;
 	this->_Energy = 100;
 	this->_Attack = 30;
-	std::cout << "FragTrap default constructor called" << std::endl;
+	std::cout << GREEN<<"FragTrap name constructor called" <<RESET<< std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap default destructor called" << std::endl;
+	std::cout <<RED<< "FragTrap default destructor called" <<RESET<< std::endl;
 	return ;
 }
 FragTrap::FragTrap(const FragTrap &copy)
@@ -50,10 +50,11 @@ FragTrap & ::FragTrap::operator=(const FragTrap &copy)
 	}
 	return (*this);
 }
-void FragTrap::guardGate(void)
+void FragTrap::hightFivesGuys(void)
 {
-	std::cout << _Name << " Hold the door(guard mode)" << std::endl;
+    std::cout << "COME ON GUUUUYS, GIVE ME A HIGHFIVES !" << std::endl;
 }
+
 void FragTrap::beRepaired(unsigned int amount)
 {
 	if (this->_Energy > 0 && this->_Hit > 0)

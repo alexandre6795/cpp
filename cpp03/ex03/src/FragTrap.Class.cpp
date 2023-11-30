@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:21:32 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/29 11:19:45 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:10:40 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap() : ClapTrap()
 	this->_Hit = 100;
 	this->_Energy = 100;
 	this->_Attack = 30;
-	std::cout << "FragTrap default constructor called" << std::endl;
+	std::cout <<GREEN<< "FragTrap default constructor called" <<RESET<< std::endl;
 }
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
@@ -25,12 +25,12 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->_Hit = 100;
 	this->_Energy = 100;
 	this->_Attack = 30;
-	std::cout << "FragTrap  name constructor called" << std::endl;
+	std::cout <<GREEN<< "FragTrap  name constructor called" << RESET<<std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap default destructor called" << std::endl;
+	std::cout <<RED<< "FragTrap default destructor called" << RESET<<std::endl;
 	return ;
 }
 FragTrap::FragTrap(const FragTrap &copy)

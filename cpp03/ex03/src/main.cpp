@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:31:48 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/29 11:36:35 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:20:29 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 	Bob.takeDamage(8);
 	Bob.beRepaired(5);
 	Bob.takeDamage(1);
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 10; i++)
 		Bob.attack(tmp);
 	Bob.beRepaired(10);
 	std::cout << tmp << " attack" << std::endl;
@@ -38,7 +38,7 @@ int	main(void)
 	Bob2.takeDamage(8);
 	Bob2.beRepaired(2);
 	Bob2.takeDamage(1);
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 10; i++)
 		Bob2.beRepaired(1);
 	std::cout << tmp << " attack" << std::endl;
 	Bob2.beRepaired(10);
@@ -55,7 +55,7 @@ int	main(void)
 	Hodor.takeDamage(8);
 	Hodor.beRepaired(5);
 	Hodor.takeDamage(1);
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 2; i++)
 		Hodor.attack(tmp);
 	std::cout << tmp << " attack" << std::endl;
 	Hodor.beRepaired(10);
@@ -114,11 +114,12 @@ int	main(void)
 
 	std::cout << std::endl << "DiamondTrap test" << std::endl;
 	DiamondTrap Diamond;
-	tmp = "un petit poid";
+	tmp = "un petit pois";
 	Diamond.hightFivesGuys();
 	Diamond.guardGate();
 	Diamond.whoAmI();
-	
+	std::cout<<std::endl<<std::endl<< std::endl;
+	std::cout<<std::endl<<std::endl;
 	Diamond.attack(tmp);
 	std::cout << tmp << " attack" << std::endl;
 	Diamond.takeDamage(8);
@@ -133,6 +134,7 @@ int	main(void)
 	Diamond.beRepaired(1);
 	std::cout << std::endl << std::endl;
 	DiamondTrap Diamond2("Bonduelle");
+	Diamond2.Status();
 
 	Diamond2.hightFivesGuys();
 	Diamond2.guardGate();

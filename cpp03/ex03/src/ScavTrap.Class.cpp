@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:21:32 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/29 11:20:01 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:24:39 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ ScavTrap::ScavTrap() : ClapTrap()
 	this->_Hit = 100;
 	this->_Energy = 50;
 	this->_Attack = 20;
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	std::cout <<GREEN<< "ScavTrap default constructor called" <<RESET<< std::endl;
 }
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_Hit = 100;
 	this->_Energy = 50;
 	this->_Attack = 20;
-	std::cout << "ScavTrap name constructor called" << std::endl;
+	std::cout <<GREEN<< "ScavTrap name constructor called" <<RESET<< std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap default destructor called" << std::endl;
+	std::cout <<RED<< "ScavTrap default destructor called" <<RESET<< std::endl;
 	return ;
 }
 ScavTrap::ScavTrap(const ScavTrap &copy)
@@ -83,7 +83,7 @@ void ScavTrap::attack(const std::string &name)
 	if (tmp > 0 && this->_Hit > 0)
 	{
 		this->_Energy--;
-		std::cout << "ScavTrap " << _Name << " attacks " << name << " causing " << _Attack << " points of damage!" << std::endl;
+		std::cout << "ScavTrap " << _Name << " attacks " << name << " causing " << this->_Attack << " points of damage!" << std::endl;
 		std::cout << "now i'm more tired my energy " << tmp << " drop to " << _Energy << std::endl;
 	}
 	else

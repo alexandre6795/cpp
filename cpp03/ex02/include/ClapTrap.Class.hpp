@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:05:13 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/28 13:43:20 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:11:09 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,4 @@ class ClapTrap
 
   protected:
 	std::string _Name;
-	unsigned int _Hit;
-	unsigned int _Energy;
-	unsigned int _Attack;
 };

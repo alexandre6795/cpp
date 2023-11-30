@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:21:32 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/28 15:34:15 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:05:02 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@ ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->_Hit = 100;
 	this->_Energy = 50;
-	this->_Attack = 30;
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	this->_Attack = 20;
+	std::cout <<GREEN<< "ScavTrap default constructor called" <<RESET<< std::endl;
 }
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_Hit = 100;
 	this->_Energy = 50;
-	this->_Attack = 30;
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	this->_Attack = 20;
+	std::cout <<GREEN<< "ScavTrap name constructor called" <<RESET<< std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap default destructor called" << std::endl;
+	std::cout <<RED<< "ScavTrap default destructor called" <<RESET<< std::endl;
 	return ;
 }
 ScavTrap::ScavTrap(const ScavTrap &copy)

@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:19:28 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/28 15:13:40 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:11:15 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #pragma once
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
   public:
 	FragTrap();
@@ -23,7 +23,7 @@ class FragTrap : public ClapTrap
 	~FragTrap();
 	FragTrap &operator=(const FragTrap &copy);
 
-	void guardGate();
+	void hightFivesGuys(void);
 	void beRepaired(unsigned int amount);
 	void attack(const std::string &target);
 };

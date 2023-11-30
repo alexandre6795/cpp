@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 16:16:36 by aherrman          #+#    #+#             */
-/*   Updated: 2023/11/29 11:08:22 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:07:27 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #pragma once
 
-class DiamondTrap : public FragTrap, public ScavTrap
+class DiamondTrap :  public ScavTrap,  public FragTrap
 {
   public:
 	DiamondTrap();
