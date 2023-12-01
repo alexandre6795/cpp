@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 10:44:15 by aherrman          #+#    #+#             */
-/*   Updated: 2023/12/01 10:57:51 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/12/01 13:35:15 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ Ice& ::Ice::operator=(const Ice &copy)
     return(*this);
     
 }
-void Ice::use(ICharacter & c)
+void Ice::use(ICharacter & taget)
 {
-    std::cout<< "* shoots an ice bolt at "<< c <<" *" std::endl;
-    return();
+    std::cout<< "* shoots an ice bolt at "<< c <<" *"<< std::endl;
+
 }

@@ -12,39 +12,31 @@
 
 #include "../include/Curse.Class.hpp"
 
-Curse::Curse()
+Curse::Curse() : _Type("cure")
 {
-    std::cout << GREEN << "Curse Default constructor called" <<RESET<< std::endl;
-    return;
+	std::cout << GREEN << "Curse Default constructor called" << RESET << std::endl;
+	return ;
 }
-
-Curse::Curse(const std::string const type): AMateria(type)
-{
-    std::cout << GREEN << "Curse type constructor called" <<RESET<< std::endl;
-}
-
 Curse::~Curse()
 {
-    std::cout << RED << "Curse Destructor called" <<RESET<< std::endl;
+	std::cout << RED << "Curse Destructor called" << RESET << std::endl;
 	return ;
 }
 Curse::Curse(const Curse &copy)
 {
-    *this= copy;
+	*this = copy;
 }
 
-Curse& ::Curse::operator=(const Curse &copy)
+Curse & ::Curse::operator=(const Curse &copy)
 {
-    std::cout << " Curse Copy assignment operator called" << std::endl;
-    if(this != &copy)
-    {
-        this->_Type = copy._Type();
-    }
-    return(*this);
-    
+	std::cout << " Curse Copy assignment operator called" << std::endl;
+	if (this != &copy)
+	{
+		this->_Type = copy._Type();
+	}
+	return (*this);
 }
-void Curse::use(ICharacter & c)
+void Curse::use(ICharacter &taget)
 {
-    std::cout<< "* heals "<< c <<" 's wounds*" std::endl;
-    return();
+	std::cout << "* heals " << target << " 's wounds*" << std::endl;
 }

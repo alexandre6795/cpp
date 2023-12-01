@@ -12,20 +12,20 @@
 
 #include "../include/AMateria.Class.hpp"
 
-AMateria::AMateria()
+AMateria::AMateria() : _Type("unknow")
 {
-	std::cout << GREEN << "AMateria Default constructor called" <<RESET<< std::endl;
+	std::cout << GREEN << "AMateria Default constructor called" << RESET << std::endl;
 	return ;
 }
 
-AMateria::AMateria(const std::string const & type) : _Type(type)
+AMateria::AMateria(const std::string const &type) : _Type(type)
 {
-	std::cout << GREEN << "AMateria name constructor called" <<RESET<< std::endl;
+	std::cout << GREEN << "AMateria name constructor called" << RESET << std::endl;
 	return ;
 }
 AMateria::~AMateria()
 {
-	std::cout << RED << "AMateria Destructor called" <<RESET<< std::endl;
+	std::cout << RED << "AMateria Destructor called" << RESET << std::endl;
 	return ;
 }
 AMateria::AMateria(const AMateria &copy)
@@ -42,7 +42,11 @@ AMateria & ::AMateria::operator=(const AMateria &copy)
 	}
 	return (*this);
 }
-std::string AMateria::getType() const
+const std::string AMateria::getType() const
 {
-    return (this->_Type);
+	return (this->_Type);
+}
+void AMateria::use(ICharacter &target)
+{
+	(void)target;
 }

@@ -16,15 +16,13 @@
 
 class Curse : public AMateria
 {
-    private:
+  public:
     
     Curse();
-    Curse(const std::string const &type);
     ~Curse();
     Curse(const Curse &copy);
     Curse &operator=(const Curse &copy);
     
-    
-    public:
+  AMateria *clone() ;
   void   use(ICharacter & c);
 }

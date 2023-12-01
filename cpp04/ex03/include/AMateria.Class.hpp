@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:05:13 by aherrman          #+#    #+#             */
-/*   Updated: 2023/12/01 11:10:12 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/12/01 14:06:06 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 #define MAGENTA "\033[35m"
 #define GRAS "\033[1m"
 
+#include"ICharacter.Class.hpp"
+
 class AMateria
 {
   public:
@@ -36,13 +38,14 @@ class AMateria
 	//canonical form
 	AMateria();
 	AMateria(const AMateria &copy);
-	virtual ~AMateria();
+	virtual ~AMateria() =0;
 	AMateria &operator=(const AMateria &copy);
 	
 	
 	virtual AMateria * clone() const = 0;
 	virtual void use(ICharacter&target);
-	std::string getType()const ;
+	std::string const getType()const ;
+	
 	
 
   protected:
