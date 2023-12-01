@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.Class.cpp                                    :+:      :+:    :+:   */
+/*   Dog.Class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,39 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cat.Class.hpp"
+#include "../include/Dog.Class.hpp"
 
-Cat::Cat()
+Dog::Dog() : _Brain(new Brain)
 {
-	std::cout << GREEN << "Cat Default constructor called" <<RESET<< std::endl;
+	std::cout << GREEN << "Dog Default constructor called" << RESET << std::endl;
 	return ;
 }
 
-Cat::Cat(std::string name) : Animal(name)
+Dog::Dog(std::string name) : Animal(name), _Brain(new Brain)
 {
-	std::cout << GREEN << "Cat name constructor called" << RESET<<std::endl;
+	std::cout << GREEN << "Dog name constructor called" << RESET << std::endl;
 	return ;
 }
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << RED << "Cat Destructor called" <<RESET<< std::endl;
+	std::cout << RED << "Dog Destructor called" << RESET << std::endl;
+	delete (_Brain);
 	return ;
 }
-Cat::Cat(const Cat &copy)
+Dog::Dog(const Dog &copy)
 {
-	std::cout << "Cat Copy constructor called" << std::endl;
+	std::cout << "Dog Copy constructor called" << std::endl;
 	this->operator=(copy);
 }
-Cat & ::Cat::operator=(const Cat &copy)
+Dog & ::Dog::operator=(const Dog &copy)
 {
-	std::cout << " Cat Copy assignment operator called" << std::endl;
+	std::cout << " Dog Copy assignment operator called" << std::endl;
 	if (this != &copy)
 	{
+		this->_Brain = new Brain(*copy._Brain);
 		this->_Type = copy._Type;
 	}
 	return (*this);
 }
-void Cat ::makeSound() const
+void Dog ::makeSound() const
 {
-	std::cout<<"Standard Cat sound.mpcat"<<std::endl;
+	std::cout << "Standard Dog sound.mp3" << std::endl;
 }

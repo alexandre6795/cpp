@@ -6,7 +6,7 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 10:04:23 by aherrman          #+#    #+#              #
-#    Updated: 2023/12/01 08:31:35 by aherrman         ###   ########.fr        #
+#    Updated: 2023/12/01 09:12:31 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS			= src/main.cpp\
 				src/Animal.Class.cpp\
 				src/WrongCat.Class.cpp\
 				src/WrongAnimal.Class.cpp\
+				src/Brain.Class.cpp\
 				src/Dog.Class.cpp\
 				src/Cat.Class.cpp
 OBJS			= $(SRCS:.cpp=.o)
