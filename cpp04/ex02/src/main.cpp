@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:31:48 by aherrman          #+#    #+#             */
-/*   Updated: 2023/12/01 09:31:12 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:57:13 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ int	main(void)
 {
 	const Animal	*j;
 	const Animal	*i;
-	Animal			*Anim[10];
+	const Animal			*Anim[10];
 	int				a;
 
 
 	a = 0;
+//	j->makeSound();
 	j = new Dog();
 	i = new Cat();
 

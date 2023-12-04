@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:41:24 by aherrman          #+#    #+#             */
-/*   Updated: 2023/12/04 09:49:53 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:18:26 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,13 @@ void MateriaSource::learnMateria(AMateria* bookOfMagic)
 {
     for (int i = 0; i < 3; i++)
     {
-        if (this->memory[i] == NULL && i < 3)
+        if (this->memory[i] == NULL)
         {
             this->memory[i] = bookOfMagic;
             std::cout << "You learn a new magic spell : " << bookOfMagic->getType()  << std::endl;
             return ;
         }
-        if (i == 3)
+        if (i == 2)
         {
             delete bookOfMagic;
             std::cout << "your brain is full, you can't learn more" << std::endl;
