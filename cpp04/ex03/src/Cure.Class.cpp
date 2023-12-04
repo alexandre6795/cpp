@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Curse.Class.cpp                                      :+:      :+:    :+:   */
+/*   Cure.Class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,33 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Curse.Class.hpp"
+#include "../include/Cure.Class.hpp"
 
-Curse::Curse() : _Type("cure")
+Cure::Cure() 
 {
-	std::cout << GREEN << "Curse Default constructor called" << RESET << std::endl;
+	this->_Type="cure";
+	std::cout << GREEN << "Cure Default constructor called" << RESET << std::endl;
 	return ;
 }
-Curse::~Curse()
+Cure::~Cure()
 {
-	std::cout << RED << "Curse Destructor called" << RESET << std::endl;
+	std::cout << RED << "Cure Destructor called" << RESET << std::endl;
 	return ;
 }
-Curse::Curse(const Curse &copy)
+Cure::Cure(const Cure &copy)
 {
 	*this = copy;
 }
 
-Curse & ::Curse::operator=(const Curse &copy)
+Cure & ::Cure::operator=( Cure const &copy)
 {
-	std::cout << " Curse Copy assignment operator called" << std::endl;
+	std::cout << " Cure Copy assignment operator called" << std::endl;
 	if (this != &copy)
 	{
-		this->_Type = copy._Type();
+		this->_Type = copy._Type;
 	}
 	return (*this);
 }
-void Curse::use(ICharacter &taget)
+void Cure::use(ICharacter &target)
 {
-	std::cout << "* heals " << target << " 's wounds*" << std::endl;
+	std::cout << "* heals " << target.getName() << " 's wounds*" << std::endl;
+}
+AMateria *Cure::clone() const
+{
+	return (new Cure(*this));
 }

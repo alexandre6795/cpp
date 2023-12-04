@@ -18,7 +18,7 @@ AMateria::AMateria() : _Type("unknow")
 	return ;
 }
 
-AMateria::AMateria(const std::string const &type) : _Type(type)
+AMateria::AMateria( std::string const &type) : _Type(type)
 {
 	std::cout << GREEN << "AMateria name constructor called" << RESET << std::endl;
 	return ;
@@ -31,7 +31,7 @@ AMateria::~AMateria()
 AMateria::AMateria(const AMateria &copy)
 {
 	std::cout << "AMateria Copy constructor called" << std::endl;
-	this->operator=(copy);
+	*this=copy;
 }
 AMateria & ::AMateria::operator=(const AMateria &copy)
 {

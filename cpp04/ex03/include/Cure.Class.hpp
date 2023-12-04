@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Curse.Class.hpp                                      :+:      :+:    :+:   */
+/*   Cure.Class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,15 +14,16 @@
 
 #include "AMateria.Class.hpp"
 
-class Curse : public AMateria
+class Cure : public AMateria
 {
   public:
     
-    Curse();
-    ~Curse();
-    Curse(const Curse &copy);
-    Curse &operator=(const Curse &copy);
+    Cure();
+    ~Cure();
+    Cure(const Cure &copy);
+    Cure &operator=(const Cure &copy);
     
   AMateria *clone() ;
   void   use(ICharacter & c);
-}
+  AMateria *clone() const;
+};

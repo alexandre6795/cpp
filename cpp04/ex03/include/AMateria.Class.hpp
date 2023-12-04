@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:05:13 by aherrman          #+#    #+#             */
-/*   Updated: 2023/12/01 14:06:06 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:22:38 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class AMateria
 {
   public:
 	
-	AMateria(const std::string const &type);
+	AMateria( std::string const &type);
 	//canonical form
 	AMateria();
 	AMateria(const AMateria &copy);

@@ -6,20 +6,20 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 10:04:23 by aherrman          #+#    #+#              #
-#    Updated: 2023/12/01 09:12:31 by aherrman         ###   ########.fr        #
+#    Updated: 2023/12/04 09:28:47 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= Pet
+NAME 			= Materia
 CXX				= c++
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 SRCS			= src/main.cpp\
-				src/Animal.Class.cpp\
-				src/WrongCat.Class.cpp\
-				src/WrongAnimal.Class.cpp\
-				src/Brain.Class.cpp\
-				src/Dog.Class.cpp\
-				src/Cat.Class.cpp
+src/AMateria.Class.cpp\
+src/Character.Class.cpp\
+src/Cure.Class.cpp\
+src/Ice.Class.cpp\
+src/MateriaSource.Class.cpp\
+
 OBJS			= $(SRCS:.cpp=.o)
 
 all				: $(NAME)

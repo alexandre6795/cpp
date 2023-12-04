@@ -14,26 +14,26 @@
 
 Character::Character() : _Name("UNKNOW")
 {
-	for (int i; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 		_Inventory[i] = NULL;
 	std::cout << GREEN << "Character Default constructor called" << RESET << std::endl;
 	return ;
 }
 
-Character::Character(const std::string const &name) : _Name(name)
+Character::Character( std::string const &name) : _Name(name)
 {
-	for (int i; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 		_Inventory[i] = NULL;
 	std::cout << GREEN << "Character type constructor called" << RESET << std::endl;
 }
 
 Character::~Character()
 {
-			delete _Inventory[i];
 
-	for (int i; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		if (_Inventory[i] != NULL)
+		delete	_Inventory[i];
 	}
 	std::cout << RED << "Character Destructor called" << RESET << std::endl;
 	return ;
@@ -45,14 +45,13 @@ Character::Character(const Character &copy)
 
 Character & ::Character::operator=(const Character &copy)
 {
-			delete _Inventory[i];
-
 	std::cout << " Character Copy assignment operator called" << std::endl;
 	if (this != &copy)
 	{
 		this->_Name = copy._Name;
-		for (int i; i < 3; i++)
+		for (int i = 0; i < 3; i++)
 		{
+			delete	_Inventory[i];
 			this->_Inventory[i] = copy._Inventory[i]->clone();
 		}
 	}
@@ -60,7 +59,7 @@ Character & ::Character::operator=(const Character &copy)
 }
 void Character::equip(AMateria *m)
 {
-	for (int i; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		if (_Inventory[i] == NULL)
 		{
@@ -71,22 +70,25 @@ void Character::equip(AMateria *m)
 			std::cout << "Inventory is full" << std::endl;
 	}
 }
-void Character ::unequip (int idx)
+void Character ::unequip(int idx)
 {
-	if(idx > 3 || idx < 0)
-	std::cout<<"invalid index number"<<std::endl;
-	else if (_Inventory[idx]= NULL)
-	std::cout<< "empty slot"<<std::endl;
+	if (idx > 3 || idx < 0)
+		std::cout << "invalid index number" << std::endl;
+	else if (_Inventory[idx] == NULL)
+		std::cout << "empty slot" << std::endl;
 	else
-	_Inventory[idx]=NULL;
-} 
-void Character::use(int idx,ICharacter &target)
+		_Inventory[idx] = NULL;
+}
+void Character::use(int idx, ICharacter &target)
 {
-	if(idx > 3 || idx < 0)
-	std::cout<<"invalid index number"<<std::endl;
-	else if (_Inventory[idx]= NULL)
-	std::cout<< "empty slot"<<std::endl;
+	if (idx > 3 || idx < 0)
+		std::cout << "invalid index number" << std::endl;
+	else if (_Inventory[idx] == NULL)
+		std::cout << "empty slot" << std::endl;
 	else
-	_Inventory[idx]->use(target);
-
+		_Inventory[idx]->use(target);
+}
+ std::string const &Character::getName()const
+{
+	return(this->_Name);
 }

@@ -6,20 +6,21 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 13:36:44 by aherrman          #+#    #+#             */
-/*   Updated: 2023/12/01 13:44:33 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:29:57 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "ICharacter.Class.hpp"
+#include "AMateria.Class.hpp"
 
 class Character : public ICharacter
 {
   public:
     
     Character();
-    Character(const std::string const &name);
+    Character( std::string const &name);
     ~Character();
     Character(const Character &copy);
     Character &operator=(const Character &copy);

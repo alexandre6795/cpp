@@ -6,9 +6,15 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:31:48 by aherrman          #+#    #+#             */
-/*   Updated: 2023/12/01 10:29:49 by aherrman         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:40:01 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../include/MateriaSource.Class.hpp"
+#include "../include/Character.Class.hpp"
+#include "../include/AMateria.Class.hpp"
+#include "../include/Ice.Class.hpp"
+#include "../include/Cure.Class.hpp"
 
 int main()
 {
