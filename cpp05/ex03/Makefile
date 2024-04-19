@@ -6,7 +6,7 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:41:45 by akastler          #+#    #+#              #
-#    Updated: 2024/04/16 11:12:33 by aherrman         ###   ########.fr        #
+#    Updated: 2024/04/19 10:16:23 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ FILES =		main \
 			PresidentialPardonForm\
 			RobotomyRequestForm\
 			ShrubberyCreationForm\
+			Intern\
 
 #add dir to files
 FILES := $(addprefix , $(FILES))

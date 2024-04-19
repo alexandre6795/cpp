@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 09:34:54 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/10 15:41:08 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:25:15 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,24 @@
 
 int main()
 {
+    
     Bureaucrat b1;
+    try
+    {
+           Bureaucrat negatifman("negatifman", -1);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+        try
+    {
+               Bureaucrat positifman("positifman", 151);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     Bureaucrat b2("b2", 1);
     Bureaucrat b3("b3", 150);
     

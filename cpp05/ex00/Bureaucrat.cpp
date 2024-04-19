@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:48:33 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/10 13:44:43 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:11:09 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ Bureaucrat::Bureaucrat() : _Name("unknow"), _Grade(150)
 
 Bureaucrat::Bureaucrat(const std::string name , int grade) : _Name(name) , _Grade(grade)
 {
+    if(this->_Grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    else if (this->_Grade > 150)
+        throw Bureaucrat::GradeTooLowException();
     std::cout << GREEN << "Bureaucrat name constructor called" << RESET << std::endl;
     return ;
 }
