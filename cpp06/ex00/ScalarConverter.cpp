@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 09:11:43 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/24 13:33:45 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:46:24 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,22 @@ void charConversion(std::string const& input)
 
 bool isonlydigit(std::string const& input)
 {
-    for (size_t i = 1; i < input.length(); i++)
+    int point = 0;
+    int f = 0;
+    int sign = 0;
+    for (size_t i = 0; i < input.length(); i++)
     {
-        if (!isdigit(input[i]) && input[i] != '.' && input[i] != 'f')
+        if (input[i] == '.')
+            point++;
+        if (input[i] == 'f')
+            f++;
+        if (input[i] == '-' || input[i] == '+')
+            sign++;
+        if (!isdigit(input[i]) &&( ( input[i] == '.' && point > 1) || (input[i] == 'f' && f > 1) || ((input[i] == '-' || input[i] == '+') && sign > 1)))
+        {
+            std::cout << "input[i]= " << input[i] << " point = " << point << " f =" << f << " sign =" << sign << std::endl;
             return false;
+        }
     }
     return true;
 }
@@ -117,9 +129,8 @@ std::string typdef(std::string const& input)
     else if (input.length() == 1 && isalpha(input[0]))
     return ("char");
     else if (( isonlydigit(input) ) ||(  input.find_last_of("-") == 0 || input.find_last_of("+")) == 0)
-    {
-        
-        if (input.find('.') != std::string::npos)
+    {   
+        if (input.find('.') != std::string::npos ||  )
         {
             if(input.find('f') != std::string::npos)
                 return ("float");

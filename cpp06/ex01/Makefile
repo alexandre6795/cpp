@@ -6,23 +6,20 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:41:45 by akastler          #+#    #+#              #
-#    Updated: 2024/04/19 10:16:23 by aherrman         ###   ########.fr        #
+#    Updated: 2024/04/25 11:50:34 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #name of the executable
-NAME = Bureaucrat
+NAME = serialize
 
 DIR = 
 
 #files (don't add the .cpp extension)
-FILES =		main \
-			AForm\
-			Bureaucrat\
-			PresidentialPardonForm\
-			RobotomyRequestForm\
-			ShrubberyCreationForm\
-			Intern\
+FILES =		main\
+			Serializer\
+			Data
+
 
 #add dir to files
 FILES := $(addprefix , $(FILES))
