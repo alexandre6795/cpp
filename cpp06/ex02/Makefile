@@ -6,7 +6,7 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:41:45 by akastler          #+#    #+#              #
-#    Updated: 2024/04/25 12:19:36 by aherrman         ###   ########.fr        #
+#    Updated: 2024/04/26 09:08:15 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ DIR =
 
 #files (don't add the .cpp extension)
 FILES =		main\
+			fonction\
+			Base\
 
 
 #add dir to files

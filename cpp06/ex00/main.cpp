@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 09:11:57 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/24 13:14:53 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:15:58 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ void inttest()
         ScalarConverter::convert("--65");
         ScalarConverter::convert(a);
         ScalarConverter::convert("0");
+        ScalarConverter::convert("2147483647");
+        ScalarConverter::convert("-2147483648");
+        ScalarConverter::convert("-0");
+        ScalarConverter::convert("+0");
     std::cout << "INT STOP" << std::endl;
 }
 void floattest()
@@ -33,13 +37,17 @@ void doubletest()
 {
     std::cout << "Double CONVERT" << std::endl;
         ScalarConverter::convert("3.14");
+                ScalarConverter::convert("214748364700.454");
+        ScalarConverter::convert("-214748364800.7895");
             std::cout << "DOUBLE STOP" << std::endl;
 }
 void chartest()
 {
     std::string c = "'c'";
+    std::string d = "c";
     std::cout << "CHAR CONVERT" << std::endl;
         ScalarConverter::convert("c");
+        ScalarConverter::convert(d);
         ScalarConverter::convert(c);
             std::cout << "CHAR STOP" << std::endl;
 }
@@ -63,11 +71,11 @@ int main (int ac , char **av)
     }
     if (ac == 1)
     {
-        // chartest();
+        chartest();
         inttest();
-    //     floattest();
-    //     doubletest();
-    //     specialtest();
+        floattest();
+        doubletest();
+        specialtest();
     }
     else
         ScalarConverter::convert(av[1]);

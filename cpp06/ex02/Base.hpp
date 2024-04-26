@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 12:20:03 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/25 12:22:56 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:48:19 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,9 @@ class C : public Base
 {
     
 };
+
+Base * generate(void);
+
+void indentify_ptr(Base *ptr);
+
+void identify_ref(Base &ref);
