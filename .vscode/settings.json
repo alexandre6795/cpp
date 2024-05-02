@@ -69,7 +69,8 @@
     "typeindex": "cpp",
     "variant": "cpp",
     "semaphore": "cpp",
-    "complex": "cpp"
+    "complex": "cpp",
+    "*.tpp": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

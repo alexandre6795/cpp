@@ -6,24 +6,23 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:41:45 by akastler          #+#    #+#              #
-#    Updated: 2024/04/29 11:00:26 by aherrman         ###   ########.fr        #
+#    Updated: 2024/05/02 13:09:22 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #name of the executable
-NAME = template
+NAME = array
 
 DIR = 
 
 #files (don't add the .cpp extension)
-FILES =		main\
-
+FILES =		main.cpp\
 
 #add dir to files
 FILES := $(addprefix , $(FILES))
 
 #modification of files variables to add .cpp extension
-SRCS = $(FILES:=.cpp)
+SRCS = $(FILES)
 
 #modification of srcs variables to add .o extension
 OBJS = $(SRCS:.cpp=.o)
