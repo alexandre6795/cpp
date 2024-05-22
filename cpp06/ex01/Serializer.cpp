@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 09:28:58 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/25 11:35:24 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:55:26 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Serializer::Serializer()
 Serializer::Serializer(Data *ptr)
 {
     this->_private = ptr;
-    
 }
 
 Serializer::Serializer(Serializer const &src)
@@ -51,6 +50,3 @@ Data *Serializer::deserialize(uintptr_t raw)
     Data *ptr = reinterpret_cast<Data *>(raw);
     return (ptr);
 }
-
-
-

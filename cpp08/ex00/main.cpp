@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 09:40:40 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/07 10:49:41 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:56:22 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,18 @@
 #include <exception>
 #include "easyfind.hpp"
 
-
-bool	isonlydigit(std::string str)
+bool isonlydigit(std::string str)
 {
-	size_t	i;
+    size_t i;
 
-	i = 1;
-	while (i < str.length())
-	{
-		if (!std::isdigit(str[i]))
-			return (1);
-		i++;
-	}
-	return (0);
+    i = 1;
+    while (i < str.length())
+    {
+        if (!std::isdigit(str[i]))
+            return (1);
+        i++;
+    }
+    return (0);
 }
 
 int main()
@@ -54,21 +53,23 @@ int main()
 
     for (int i = 0; i < 4242; i++)
     {
-        if(i % 3 == 0)
-        v.push_back(rand() % 10 + i);
+        if (i % 3 == 0)
+            v.push_back(rand() % 10 + i);
         else if (i % 2 == 0)
-        v.push_back(rand() * 10 % i);
+            v.push_back(rand() * 10 % i);
         else
-        v.push_back(rand() /2588 );
+            v.push_back(rand() / 2588);
     }
-    for (std::vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
+    for (std::vector<int>::iterator it = v.begin(); it != v.end(); ++it)
+    {
         std::cout << *it << " ";
     }
     std::cout << std::endl;
     std::cout << "EXIT to exit the program TEST for autotest or int" << std::endl;
-    while(1)
+    while (1)
     {
-        std::cout << std::endl << "Enter a number to find in the vector: ";
+        std::cout << std::endl
+                  << "Enter a number to find in the vector: ";
         std::getline(std::cin, line);
         if (line == "EXIT")
             break;
@@ -104,27 +105,25 @@ int main()
             easyfind(d, 42);
             easyfind(d, -1);
             easyfind(d, 84);
-            std::cout <<"end of autotest" << std::endl;
+            std::cout << "end of autotest" << std::endl;
             break;
         }
-        if(line.empty() ||
-        (!std::isdigit(line[0]) && ( line[0]!='+' && line[0]!= '-')) || isonlydigit(line))
+        if (line.empty() ||
+            (!std::isdigit(line[0]) && (line[0] != '+' && line[0] != '-')) || isonlydigit(line))
         {
-            std::cout  <<"\"" << line <<"\"" << " are not a int" <<  std::endl;
+            std::cout << "\"" << line << "\"" << " are not a int" << std::endl;
             continue;
         }
         else
         {
-           long int va = std::atol(line.c_str());
-           if(va > std::numeric_limits<int>::max() || va < std::numeric_limits<int>::min())
-              {
+            long int va = std::atol(line.c_str());
+            if (va > std::numeric_limits<int>::max() || va < std::numeric_limits<int>::min())
+            {
                 std::cout << "Number out of range" << std::endl;
                 continue;
-              }
+            }
             else
-            easyfind(v, va);
-            
+                easyfind(v, va);
         }
     }
-    
 }

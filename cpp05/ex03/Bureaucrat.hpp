@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:49:23 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/19 09:26:07 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:42:15 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,34 +38,35 @@ class Bureaucrat
 private:
     std::string const _Name;
     int _Grade;
-    
+
 public:
-    class GradeTooHighException : public std::exception{
-        public:
+    class GradeTooHighException : public std::exception
+    {
+    public:
         virtual const char *what() const throw()
         {
             return ("Grade is too high");
         }
     };
-    class GradeTooLowException : public std::exception{
-        public:
+    class GradeTooLowException : public std::exception
+    {
+    public:
         virtual const char *what() const throw()
         {
             return ("Grade is too low");
         }
     };
-Bureaucrat();
-Bureaucrat(const std::string name, int grade);
-Bureaucrat(const Bureaucrat &copy);
-~Bureaucrat();
-Bureaucrat &operator=(const Bureaucrat &copy);
-std::string getName() const;
-int getGrade() const;
-void incrementGrade();
-void decrementGrade();
-void callNandG();
-void signForm(AForm &form);
-void executeForm(AForm const &form);
-
+    Bureaucrat();
+    Bureaucrat(const std::string name, int grade);
+    Bureaucrat(const Bureaucrat &copy);
+    ~Bureaucrat();
+    Bureaucrat &operator=(const Bureaucrat &copy);
+    std::string getName() const;
+    int getGrade() const;
+    void incrementGrade();
+    void decrementGrade();
+    void callNandG();
+    void signForm(AForm &form);
+    void executeForm(AForm const &form);
 };
-std::ostream &operator<<(std::ostream& os, const Bureaucrat &b);
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);

@@ -6,10 +6,9 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 09:40:30 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/07 09:59:02 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:56:19 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #pragma once
 
@@ -31,14 +30,15 @@
 #include <exception>
 
 template <typename T>
-    class Numbernotfound : public std::exception{
-        public:
-        virtual const char *what() const throw()
-        {
-            return ("Number not fund");
-        }
-    };
-    
+class Numbernotfound : public std::exception
+{
+public:
+    virtual const char *what() const throw()
+    {
+        return ("Number not fund");
+    }
+};
+
 template <typename T>
 int easyfind(T &container, int value)
 {
@@ -48,13 +48,13 @@ int easyfind(T &container, int value)
     {
         if (it == container.end())
         {
-            std::cout<<value << " ";
+            std::cout << value << " ";
             throw Numbernotfound<T>();
         }
         else
         {
-         distance = std::distance(container.begin(), it);
-         std::cout << "Value: " << value << " found at pos number " << distance << std::endl;
+            distance = std::distance(container.begin(), it);
+            std::cout << "Value: " << value << " found at pos number " << distance << std::endl;
         }
     }
     catch (Numbernotfound<T> &e)

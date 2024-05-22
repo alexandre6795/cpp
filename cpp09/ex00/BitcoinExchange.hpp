@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fonction.hpp                                       :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 09:39:53 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/15 11:55:51 by aherrman         ###   ########.fr       */
+/*   Created: 2024/05/16 10:05:41 by aherrman          #+#    #+#             */
+/*   Updated: 2024/05/21 13:50:03 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,18 @@
 #include <sstream>
 #include <string>
 #include <stdint.h>
+#include <algorithm>
+#include <vector>
+#include <list>
+#include <deque>
+#include <set>
+#include <map>
+#include <exception>
+#include <fstream>
 
-template <typename T>
+bool is_leap_year(int year);
+bool valid_days(int month, int day, bool leap);
+bool valid_month(int month);
+bool valid_date(std::string date);
+void exchange(std::map<std::string, int> &mdata, std::map<std::string, int> &mfile);
 
-T min(T a, T b)
-{
-    return ((a >= b) ? b : a);
-}
-
-template <typename T>
-
-T max(T a, T b)
-{
-    return ((a <= b) ? b : a);
-}
-
-template <typename T>
-
-void swap(T &a, T &b)
-{
-    T c = a;
-    a = b;
-    b = c;
-}

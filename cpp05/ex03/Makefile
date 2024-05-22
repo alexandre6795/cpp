@@ -6,7 +6,7 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:41:45 by akastler          #+#    #+#              #
-#    Updated: 2024/04/19 10:16:23 by aherrman         ###   ########.fr        #
+#    Updated: 2024/05/15 11:53:16 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ OBJS = $(SRCS:.cpp=.o)
 #compiler and flags
 CXX = c++
 
-CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -g3
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -g3 
 
 #utils
 RM = rm -f

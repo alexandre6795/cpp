@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:32:14 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/14 11:57:14 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:56:33 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ Span::Span(unsigned int n) : _n(n)
 {
 }
 
-Span::Span(unsigned int n,bool autofill) : _n(n)
+Span::Span(unsigned int n, bool autofill) : _n(n)
 {
-    if(autofill)
+    if (autofill)
     {
         srand(time(NULL));
-        for(unsigned int i = 0; i < n; i++)
+        for (unsigned int i = 0; i < n; i++)
         {
             _v.push_back(rand());
         }
@@ -34,7 +34,7 @@ Span::Span(unsigned int n,bool autofill) : _n(n)
 }
 
 Span::Span(Span const &other)
-{ 
+{
     *this = other;
 }
 
@@ -69,13 +69,13 @@ long int Span::shortestSpan()
     long int n1 = 0;
     long int n2 = 0;
     long int result;
-        if (_v.size() < 2)
-            throw Less2nb();
-    for(int i = 0; i < static_cast<int>(_v.size()); i++)
+    if (_v.size() < 2)
+        throw Less2nb();
+    for (int i = 0; i < static_cast<int>(_v.size()); i++)
     {
-        for(int j = i + 1; j <static_cast<int>(_v.size()); j++)
+        for (int j = i + 1; j < static_cast<int>(_v.size()); j++)
         {
-            if(_v[i] > _v[j])
+            if (_v[i] > _v[j])
             {
                 n1 = _v[i];
                 n2 = _v[j];
@@ -86,7 +86,7 @@ long int Span::shortestSpan()
                 n2 = _v[i];
             }
             delta = n1 - n2;
-            if(delta < result)
+            if (delta < result)
             {
                 result = delta;
             }
@@ -94,27 +94,25 @@ long int Span::shortestSpan()
     }
     std::cout << "found " << n1 << " and " << n2 << " result for ShortestSpan: ";
     return (result);
-    
 }
 
 long int Span::longestSpan()
 {
-   long int shortest = __LONG_MAX__;
+    long int shortest = __LONG_MAX__;
     long int longest = 0;
     if (_v.size() < 2)
-            throw Less2nb();
-    for( std::vector<int>::size_type i = 0 ; i < _v.size(); i++)
+        throw Less2nb();
+    for (std::vector<int>::size_type i = 0; i < _v.size(); i++)
     {
-        if(_v[i] < shortest)
+        if (_v[i] < shortest)
         {
             shortest = _v[i];
         }
-        else if(_v[i] > longest)
+        else if (_v[i] > longest)
         {
             longest = _v[i];
         }
     }
-    std::cout << "found " << longest <<" and " << shortest << " result for longestSpan: ";
+    std::cout << "found " << longest << " and " << shortest << " result for longestSpan: ";
     return (longest - shortest);
-    
 }

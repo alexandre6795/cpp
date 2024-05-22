@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:36:12 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/10 14:46:59 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:41:23 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ private:
     const int _signGrade;
     const int _execGrade;
     bool _signed;
-    public:
+
+public:
     Form();
     Form(std::string name, int signGrade, int execGrade);
     Form(Form const &src);
@@ -44,12 +45,12 @@ private:
     void beSigned(Bureaucrat &bureaucrat);
     class GradeTooHighException : public std::exception
     {
-        public:
+    public:
         virtual const char *what() const throw();
     };
     class GradeTooLowException : public std::exception
     {
-        public:
+    public:
         virtual const char *what() const throw();
     };
 };

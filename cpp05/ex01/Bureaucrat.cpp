@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 08:48:33 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/18 13:23:20 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:41:15 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 Bureaucrat::Bureaucrat() : _Name("unknow"), _Grade(150)
 {
-    return ;
+    return;
 }
 
-Bureaucrat::Bureaucrat(const std::string name , int grade) : _Name(name) , _Grade(grade)
+Bureaucrat::Bureaucrat(const std::string name, int grade) : _Name(name), _Grade(grade)
 {
-    if(this->_Grade < 1)
+    if (this->_Grade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (this->_Grade > 150)
         throw Bureaucrat::GradeTooLowException();
-    return ;
+    return;
 }
 Bureaucrat::~Bureaucrat()
 {
-    return ;
+    return;
 }
 Bureaucrat::Bureaucrat(const Bureaucrat &copy)
 {
-    *this=copy;
+    *this = copy;
 }
 Bureaucrat & ::Bureaucrat::operator=(Bureaucrat const &copy)
 {
@@ -64,22 +64,24 @@ void Bureaucrat::decrementGrade()
 
 void Bureaucrat::callNandG()
 {
-       std::cout <<"Name: " << this->getName() << " grade level: " << this->getGrade() << std::endl;
+    std::cout << "Name: " << this->getName() << " grade level: " << this->getGrade() << std::endl;
 }
 void Bureaucrat::signForm(Form &form)
 {
-    try {
-        form.beSigned(*this);
-        if(form.getSigned() == true)
-        std::cout << "Bureaucrat " << this->getName() << " signed " << form.getName() << std::endl;
-    }
-    catch(const std::exception& e)
+    try
     {
-         std::cerr << "Bureaucrat " << this->getName() << " couldn't sign " << form.getName() <<" because " << e.what() << std::endl;
+        form.beSigned(*this);
+        if (form.getSigned() == true)
+            std::cout << "Bureaucrat " << this->getName() << " signed " << form.getName() << std::endl;
     }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Bureaucrat " << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
     }
-std::ostream & operator <<(std::ostream &os, const Bureaucrat &b) {
+}
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
+{
     std::cout << GREEN << "Bureaucrat operator << called" << RESET << std::endl;
     os << "Name: " << b.getName() << " grade level: " << b.getGrade() << std::endl;
     return os;
-} 
+}

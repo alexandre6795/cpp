@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:32:02 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/17 10:37:06 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:42:46 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 
 class ShrubberyCreationForm : public AForm
 {
-    public:
-        ShrubberyCreationForm(std::string target);
-        ShrubberyCreationForm(ShrubberyCreationForm const & src);
-        ~ShrubberyCreationForm();
-        ShrubberyCreationForm & operator=(ShrubberyCreationForm const & src);
-        void execute(Bureaucrat const & executor)const;
-    private:
-        ShrubberyCreationForm();
-}; 
+public:
+    ShrubberyCreationForm(std::string target);
+    ShrubberyCreationForm(ShrubberyCreationForm const &src);
+    ~ShrubberyCreationForm();
+    ShrubberyCreationForm &operator=(ShrubberyCreationForm const &src);
+    void execute(Bureaucrat const &executor) const;
+
+private:
+    ShrubberyCreationForm();
+};

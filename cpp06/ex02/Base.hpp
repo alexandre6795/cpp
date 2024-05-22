@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 12:20:03 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/26 09:48:19 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:55:33 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,23 @@
 
 class Base
 {
-    public:
+public:
     virtual ~Base();
 };
 
 class A : public Base
 {
-    
 };
 
 class B : public Base
 {
-    
 };
 
 class C : public Base
 {
-    
 };
 
-Base * generate(void);
+Base *generate(void);
 
 void indentify_ptr(Base *ptr);
 

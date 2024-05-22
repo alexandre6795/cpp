@@ -6,15 +6,15 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 09:42:40 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/19 11:21:37 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/21 09:09:15 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
-Intern::Intern() :_binder(NULL) , _nbform(0)
+Intern::Intern()
 {
-    
+
     return;
 }
 Intern::Intern(Intern const &src)
@@ -24,14 +24,6 @@ Intern::Intern(Intern const &src)
 }
 Intern::~Intern()
 {
-    std::cout << "Intern destructor called" << std::endl;
-    if(_binder)
-    {
-        std::cout << "Intern binder destructor called" << std::endl;
-    for(int i = 0; i < _nbform; i++)
-        delete _binder[i];
-    }
-    delete [] _binder;
     return;
 }
 Intern &Intern::operator=(Intern const &src)
@@ -56,10 +48,10 @@ static AForm *PresidentialPardon(std::string target)
     return (new PresidentialPardonForm(target));
 }
 
-
-AForm *Intern::makeForm(std::string name , std::string target)
+AForm *Intern::makeForm(std::string name, std::string target)
 {
-    std::string formname[3] = {"shrubbery creation","robotomy request","presidential pardon"};
+    AForm *newf = NULL;
+    std::string formname[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
     AForm *(*form[3])(std::string) = {ShrubberyCreation, RobotomyRequest, PresidentialPardon};
     if (name != formname[0] && name != formname[1] && name != formname[2])
         throw Intern::UnknownFormException();
@@ -67,22 +59,9 @@ AForm *Intern::makeForm(std::string name , std::string target)
     {
         if (name == formname[i])
         {
-            std::cout << "Intern creates " << name <<  "total of" << _nbform << " form "<<  std::endl;
-           AForm *newf= form[i](target);
-            AForm **tmp = new AForm *[_nbform+1];
-            if (_binder)
-            {
-            for (int j = 0; j < _nbform; j++)
-                tmp[j] = _binder[j];
-            }
-            tmp[_nbform] = newf;
-            delete [] _binder;
-            _binder = tmp;
-            _nbform++;
-            return newf;
-            
+            if (i != 43)
+                newf = form[i](target);
         }
     }
-    return NULL;
-
+    return newf;
 }

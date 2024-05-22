@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:31:50 by aherrman          #+#    #+#             */
-/*   Updated: 2024/04/17 10:36:22 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:41:56 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 class RobotomyRequestForm : public AForm
 {
-    public:
+public:
     RobotomyRequestForm(std::string target);
-    RobotomyRequestForm(RobotomyRequestForm const & src);
+    RobotomyRequestForm(RobotomyRequestForm const &src);
     ~RobotomyRequestForm();
-    RobotomyRequestForm & operator=(RobotomyRequestForm const & src);
-    void execute(Bureaucrat const & executor) const;
-    private:
+    RobotomyRequestForm &operator=(RobotomyRequestForm const &src);
+    void execute(Bureaucrat const &executor) const;
+
+private:
     RobotomyRequestForm();
-    
 };
