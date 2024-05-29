@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 11:14:00 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/29 14:55:25 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:00:25 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@
 #include <exception>
 #include <fstream>
 #include <stack>
+
+
+#define TUS 1000000.0
 
 bool valid_no_doublon(std::list<long long int> list);
 void print_list_vector(std::list<long long int> list, std::vector<long long int> vector, int sort);

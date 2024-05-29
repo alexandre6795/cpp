@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 13:39:51 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/29 14:57:57 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:08:14 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ bool is_sort(std::list<long long int> list)
 
 int main(int ac, char **av)
 {
+    std::clock_t pstart = std::clock();
     std::list<long long int> list;
     std::vector<long long int> vector;
     std::list<long long int> s_list;
@@ -69,7 +70,10 @@ int main(int ac, char **av)
     else
     {
         if (valid_arguments(av))
+        {
+            std::cout << "Error: invalid arguments" << std::endl;
             return (1);
+        }
         for (int i = 1; av[i]; i++)
         {
             std::string str(av[i]);
@@ -85,13 +89,20 @@ int main(int ac, char **av)
         std::clock_t start = std::clock();
         s_list = sort_list(list);
         std::clock_t end = std::clock();
+        double t1 = (TUS * (end - start) / CLOCKS_PER_SEC);
         print_list_vector(s_list, vector, 0);
-        std::cout << "   time for list:" << (10000000 * (end - start) / CLOCKS_PER_SEC) << "us" << std::endl;
         start = std::clock();
         s_vector = sort_vector(vector);
         end = std::clock();
+        double t2 = (TUS * (end - start) / CLOCKS_PER_SEC);
         print_list_vector(list, s_vector, 1);
-        std::cout << "   time for vector:" << (10000000 * (end - start) / CLOCKS_PER_SEC) << "us" << std::endl;
+        std::cout << std::endl
+                  << "time for vector: " << t2 << "us" << std::endl;
+        std::cout << "time for list: " << t1 << "us" << std::endl;
+        std::cout << "size of list: " << list.size() << " sort list " << s_list.size() << std::endl;
+        std::cout << "size of vector: " << vector.size() << " sort vector " << s_vector.size() << std::endl;
+        std::clock_t pend = std::clock();
+        std::cout << "total exec time: " << (TUS * (pend - pstart) / CLOCKS_PER_SEC) << "ms and total sort time " << t1 + t2 << " us" << std::endl;
     }
 
     return (0);
