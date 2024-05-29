@@ -6,17 +6,18 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:41:45 by akastler          #+#    #+#              #
-#    Updated: 2024/05/15 15:34:56 by aherrman         ###   ########.fr        #
+#    Updated: 2024/05/27 09:50:32 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #name of the executable
-NAME = Mutant
+NAME = RPN
 
 DIR = 
 
 #files (don't add the .cpp extension)
 FILES =		main\
+			
 
 
 #add dir to files

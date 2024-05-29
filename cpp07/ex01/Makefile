@@ -6,12 +6,12 @@
 #    By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:41:45 by akastler          #+#    #+#              #
-#    Updated: 2024/04/29 11:00:26 by aherrman         ###   ########.fr        #
+#    Updated: 2024/05/22 12:40:34 by aherrman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #name of the executable
-NAME = template
+NAME = iter
 
 DIR = 
 

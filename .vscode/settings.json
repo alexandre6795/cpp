@@ -70,7 +70,8 @@
     "variant": "cpp",
     "semaphore": "cpp",
     "complex": "cpp",
-    "*.tpp": "c"
+    "*.tpp": "c",
+    "unordered_set": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

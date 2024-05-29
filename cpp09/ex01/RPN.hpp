@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 10:05:41 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/22 09:40:39 by aherrman         ###   ########.fr       */
+/*   Created: 2024/05/22 11:14:00 by aherrman          #+#    #+#             */
+/*   Updated: 2024/05/24 13:47:43 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,5 @@
 #include <map>
 #include <exception>
 #include <fstream>
-
-bool is_leap_year(int year);
-bool valid_days(int month, int day, bool leap);
-bool valid_month(int month);
-bool valid_date(std::string date);
-void exchange(std::map<std::string, float> &mdata, char *av );
+#include <stack>
 

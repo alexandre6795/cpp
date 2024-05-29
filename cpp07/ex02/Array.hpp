@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:25:43 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/15 11:56:07 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/22 12:54:12 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public:
     public:
         virtual const char *what() const throw()
         {
-            return ("Invalide number");
+            return ("Invalide index");
         }
     };
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 10:05:41 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/22 09:40:39 by aherrman         ###   ########.fr       */
+/*   Created: 2024/05/22 11:14:00 by aherrman          #+#    #+#             */
+/*   Updated: 2024/05/29 14:55:25 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,9 @@
 #include <map>
 #include <exception>
 #include <fstream>
+#include <stack>
 
-bool is_leap_year(int year);
-bool valid_days(int month, int day, bool leap);
-bool valid_month(int month);
-bool valid_date(std::string date);
-void exchange(std::map<std::string, float> &mdata, char *av );
-
+bool valid_no_doublon(std::list<long long int> list);
+void print_list_vector(std::list<long long int> list, std::vector<long long int> vector, int sort);
+std::list<long long int> sort_list(std::list<long long int> list);
+std::vector<long long int > sort_vector(std::vector<long long int> vector);

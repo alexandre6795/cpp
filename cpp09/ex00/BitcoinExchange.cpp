@@ -6,7 +6,7 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 11:36:45 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/21 15:57:43 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:45:34 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,27 +51,41 @@ bool valid_date(std::string date)
     return (valid);
 }
 
-void exchange(std::map<std::string, int> &mdata, std::ifstream file)
+void exchange(std::map<std::string, float> &mdata, char *av)
 {
+    std::ifstream file(av);
+    if (!file.is_open())
+    {
+        std::cerr << "can't open file => " << av << std::endl;
+        return;
+    }
     std::string line;
     std::string date;
     std::string temp;
-    float bicoinnb;
     while (std::getline(file, line))
     {
+        if (line == "date | value")
+        std::getline(file,line);
         int pos = line.find("|");
         date = line.substr(0, pos);
         temp = line.substr(pos + 1);
-        float bicoinnb = std::atof(temp.c_str());
-        if(valid_date(date))
+        float bitcoinnb = std::atof(temp.c_str());
+        if (valid_date(date))
         {
-            if (mdata.find(date) != mdata.end())
-                std::cout << date << " " << bicoinnb << " " << mdata.lower_bound()[date] << std::endl;
+            if (bitcoinnb < 0 || bitcoinnb > 1000)
+            {
+                std::cerr << date << " => invalid bitcoin number"<< std::endl;
+            }
+           else if (mdata.lower_bound(date) != mdata.end())
+            {
+                // std::cout << "date in input" << date << " date in csv " << mdata.lower_bound(date)->first << "value on csv = " << mdata.lower_bound(date)->second << std::endl;
+                float value = bitcoinnb * mdata.lower_bound(date)->second;
+                std::cout << date << " => " << bitcoinnb << " => " << value << std::endl;
+            }
             else
                 std::cerr << "date not found in data.csv" << std::endl;
         }
         else
-            std::cerr << "invalid date" << std::endl;
-        }
+            std::cerr << "invalid date => " << date << std::endl;
     }
 }

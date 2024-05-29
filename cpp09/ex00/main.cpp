@@ -6,15 +6,15 @@
 /*   By: aherrman <aherrman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 10:04:51 by aherrman          #+#    #+#             */
-/*   Updated: 2024/05/21 15:46:41 by aherrman         ###   ########.fr       */
+/*   Updated: 2024/05/22 09:40:22 by aherrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-std::map<std::string, int> parsedata(std::ifstream &data)
+std::map<std::string, float> parsedata(std::ifstream &data)
 {
-    std::map<std::string, int> mdata;
+    std::map<std::string, float> mdata;
     std::string line;
     std::string date;
     std::string temp;
@@ -23,29 +23,29 @@ std::map<std::string, int> parsedata(std::ifstream &data)
         int pos = line.find(",");
         date = line.substr(0, pos);
         temp = line.substr(pos + 1);
-        mdata[date] = std::atoi(temp.c_str());
+        mdata[date] = std::atof(temp.c_str());
     }
     return mdata;
 }
 
-std::map<std::string, int> parsefile(std::ifstream &data)
-{
-    std::map<std::string, int> mdata;
-    std::string line;
-    std::string date;
-    std::string temp;
-    int i = 0;
-    while (std::getline(data, line))
-    {
-        std::cout << i << " => " << line << std::endl;
-        i++;
-        int pos = line.find("|");
-        date = line.substr(0, pos);
-        temp = line.substr(pos + 1);
-        mdata[date] = std::atoi(temp.c_str());
-    }
-    return mdata;
-}
+// std::map<std::string, int> parsefile(std::ifstream &data)
+// {
+//     std::map<std::string, int> mdata;
+//     std::string line;
+//     std::string date;
+//     std::string temp;
+//     int i = 0;
+//     while (std::getline(data, line))
+//     {
+//         std::cout << i << " => " << line << std::endl;
+//         i++;
+//         int pos = line.find("|");
+//         date = line.substr(0, pos);
+//         temp = line.substr(pos + 1);
+//         mdata[date] = std::atoi(temp.c_str());
+//     }
+//     return mdata;
+// }
 
 int main(int ac, char **av)
 {
@@ -53,14 +53,10 @@ int main(int ac, char **av)
 
     if (data.is_open())
     {
-        std::map<std::string, int> mdata = parsedata(data);
+        std::map<std::string, float> mdata = parsedata(data);
         if (ac == 2)
         {
-            std::ifstream file(av[1]);
-            if (!file.is_open())
-                std::cerr << "can't open file => " << av[1] << std::endl;
-            else
-                exchange(mdata, file);
+                exchange(mdata, av[1]);
         }
         else
             std::cerr << "only one argument is allowed" << std::endl;
